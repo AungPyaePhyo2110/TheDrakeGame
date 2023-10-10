@@ -26,10 +26,23 @@ public class Troop {
         this.reversPivot = new Offset2D( 1 , 1 );
     }
 
-    public String getName ()
+    public String name ()
     {
         return this.name;
     }
+
+    public Offset2D pivot(TroopFace face)
+    {
+        if( face == TroopFace.AVERS)
+        {
+            return aversPivot;
+        }
+        else
+        {
+            return reversPivot;
+        }
+    }
+
 
 
 
