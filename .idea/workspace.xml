@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="12435a41-e827-4463-9dff-df3fd9c1f6e4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/thedrake/PlayingSide.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/thedrake/Tile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/thedrake/TroopTile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="12435a41-e827-4463-9dff-df3fd9c1f6e4" name="Changes" comment="Add Tile">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TheDrakeGame.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TheDrakeGame.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/MainSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/MainSuite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thedrake/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thedrake/Board.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +42,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
+    "last_opened_file_path": "/Users/aungpyaephyo/BIE-PJV/TheDrakeGame",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -86,11 +84,31 @@
       <workItem from="1696964419081" duration="3466000" />
       <workItem from="1697059538300" duration="1295000" />
       <workItem from="1697134046187" duration="2000" />
-      <workItem from="1697134132477" duration="322000" />
+      <workItem from="1697134132477" duration="523000" />
+      <workItem from="1697136096458" duration="3079000" />
     </task>
+    <task id="LOCAL-00001" summary="Add Tile">
+      <created>1697134470396</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1697134470396</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Add Tile">
+      <created>1697134483861</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1697134483861</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add Tile" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Tile" />
   </component>
 </project>
