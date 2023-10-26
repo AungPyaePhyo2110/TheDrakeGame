@@ -1,5 +1,8 @@
 package thedrake;
 
+import java.util.Collections;
+import java.util.List;
+
 public interface BoardTile extends Tile {
     BoardTile EMPTY = new BoardTile() {
 
@@ -11,6 +14,11 @@ public interface BoardTile extends Tile {
         @Override
         public boolean hasTroop() {
             return false;
+        }
+
+        @Override
+        public List<Move> movesFrom(BoardPos pos, GameState state) {
+            return Collections.emptyList();
         }
 
         @Override
@@ -28,6 +36,11 @@ public interface BoardTile extends Tile {
         @Override
         public boolean hasTroop() {
             return false;
+        }
+
+        @Override
+        public List<Move> movesFrom(BoardPos pos, GameState state) {
+            return Collections.emptyList();
         }
 
         @Override
