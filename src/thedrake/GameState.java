@@ -154,80 +154,36 @@ public class GameState {
         {
             return false;
         }
-        if(sideOnTurn == PlayingSide.ORANGE)
+        if(armyOnTurn().stack().isEmpty())
+            return false;
+        if(!armyOnTurn().boardTroops().isLeaderPlaced())
         {
-            if(orangeArmy.stack().isEmpty())
+            if(armyOnTurn() == orangeArmy && target.row() != board.dimension())
                 return false;
-            if(!orangeArmy.boardTroops().isLeaderPlaced())
-            {
-               if(target.row() != board.dimension())
-                   return false;
-               else
-               {
-                   return tileAt(target).canStepOn();
-               }
-            }
-            if(orangeArmy.boardTroops().isPlacingGuards())
-            {
-                int column = abs(orangeArmy.boardTroops().leaderPosition().column()- target.column());
-                int row = abs(orangeArmy.boardTroops().leaderPosition().row()-target.row());
-                if( !(row == 0 && column == 1) && !(row == 1 && column == 0))
-                    return  false;
-                else
-                {
-                    if(!board.at(target).canStepOn())
-                        return false;
-                }
-            }
-            boolean foundPlace = false;
-            for(BoardPos position : orangeArmy.boardTroops().troopPositions())
-            {
-                int column = abs(position.column()-target.column());
-                int row = abs(position.row()-target.row());
-                if( (row == 0 && column == 1) || (row == 1 && column == 0))
-                    foundPlace = true;
-            }
-            return foundPlace;
+            else if(armyOnTurn() == blueArmy && target.row() != 1)
+                return false;
+           else
+           {
+               return tileAt(target).canStepOn();
+           }
         }
-        else
+        if(armyOnTurn().boardTroops().isPlacingGuards())
         {
-            if(blueArmy.stack().isEmpty())
+            if(!armyOnTurn().boardTroops().leaderPosition().isNextTo(target))
                 return false;
-            if(!blueArmy.boardTroops().isLeaderPlaced())
+            else
             {
-                if(target.row() != 1)
+                if(!board.at(target).canStepOn())
                     return false;
-                else
-                {
-                    return board.at(target).canStepOn();
-                }
             }
-            if(blueArmy.boardTroops().isPlacingGuards())
-            {
-
-                int column = abs(blueArmy.boardTroops().leaderPosition().column()- target.column());
-                int row = abs(blueArmy.boardTroops().leaderPosition().row()-target.row());
-                if( !(row == 0 && column == 1) && !(row == 1 && column == 0))
-                    return  false;
-                else
-                {
-                    if(!board.at(target).canStepOn())
-                        return false;
-                }
-
-            }
-
-            boolean foundplace = false;
-            for(BoardPos position : blueArmy.boardTroops().troopPositions())
-            {
-                int column = abs(position.column()-target.column());
-                int row = abs(position.row()-target.row());
-                if( (row == 0 && column == 1) || (row == 1 && column == 0))
-                    foundplace =  true;
-            }
-
-            return foundplace;
         }
+        boolean foundPlace = false;
+        for(BoardPos position : armyOnTurn().boardTroops().troopPositions())
+        {
+            if(position.isNextTo(target))
+                foundPlace = true;
+        }
+        return foundPlace;
     }
 
     public GameState stepOnly(BoardPos origin, BoardPos target) {
