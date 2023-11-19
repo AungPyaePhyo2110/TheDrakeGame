@@ -6,33 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="12435a41-e827-4463-9dff-df3fd9c1f6e4" name="Changes" comment="Add Tile">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/suite04/ActionsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/suite04/ActionsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thedrake/Army.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thedrake/Army.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thedrake/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thedrake/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thedrake/BoardMove.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thedrake/BoardMove.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thedrake/BoardPos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thedrake/BoardPos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thedrake/BoardTile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thedrake/BoardTile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thedrake/BoardTroops.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thedrake/BoardTroops.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thedrake/CaptureOnly.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thedrake/CaptureOnly.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thedrake/GameResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thedrake/GameResult.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/thedrake/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thedrake/GameState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thedrake/Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thedrake/Move.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thedrake/Offset2D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thedrake/Offset2D.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thedrake/PlaceFromStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thedrake/PlaceFromStack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thedrake/PlayingSide.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thedrake/PlayingSide.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thedrake/PositionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thedrake/PositionFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thedrake/ShiftAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thedrake/ShiftAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thedrake/SlideAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thedrake/SlideAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thedrake/StandardDrakeSetup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thedrake/StandardDrakeSetup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thedrake/StepAndCapture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thedrake/StepAndCapture.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thedrake/StepOnly.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thedrake/StepOnly.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thedrake/StrikeAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thedrake/StrikeAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thedrake/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thedrake/Tile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thedrake/TilePos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thedrake/TilePos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thedrake/Troop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thedrake/Troop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thedrake/TroopAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thedrake/TroopAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thedrake/TroopFace.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thedrake/TroopFace.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/thedrake/TroopTile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thedrake/TroopTile.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,6 +160,7 @@
       <workItem from="1698526413615" duration="13904000" />
       <workItem from="1698612044998" duration="7294000" />
       <workItem from="1700430226296" duration="16000" />
+      <workItem from="1700430458045" duration="782000" />
     </task>
     <task id="LOCAL-00001" summary="Add Tile">
       <created>1697134470396</created>

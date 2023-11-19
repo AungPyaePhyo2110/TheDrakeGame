@@ -114,10 +114,6 @@ public class GameState {
         }
 
         Tile foundTile = tileAt(target);
-        if(foundTile.hasTroop())
-        {
-            return false;
-        }
         return foundTile.canStepOn();
     }
 
