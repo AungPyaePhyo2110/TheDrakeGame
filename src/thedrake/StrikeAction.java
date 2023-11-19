@@ -1,5 +1,6 @@
 package thedrake;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class StrikeAction extends TroopAction{
@@ -13,6 +14,13 @@ public class StrikeAction extends TroopAction{
     }
     @Override
     public List<Move> movesFrom(BoardPos origin, PlayingSide side, GameState state) {
-        return null;
+        List<Move> result = new ArrayList<>();
+        TilePos target = origin.stepByPlayingSide(offset(), side);
+
+        if (state.canCapture(origin, target)) {
+            result.add(new CaptureOnly(origin, (BoardPos) target));
+        }
+
+        return result;
     }
 }

@@ -38,6 +38,10 @@ public class ActionsTest {
 
         GameState state = new GameState(board, blueArmy, orangeArmy);
 
+
+
+
+
         //Slide: drake at b1 can move only in an empty direction (own clubman is on c1)
         assertEquals(
                 makeSet(
@@ -47,6 +51,8 @@ public class ActionsTest {
                         state.tileAt(pf.pos("b1")).movesFrom(pf.pos("b1"), state)
                 )
         );
+
+
 
         assertEquals(
                 makeSet(

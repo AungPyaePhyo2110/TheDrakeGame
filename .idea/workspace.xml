@@ -5,16 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12435a41-e827-4463-9dff-df3fd9c1f6e4" name="Changes" comment="Add Tile">
-      <change afterPath="$PROJECT_DIR$/src/thedrake/SlideAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/thedrake/StrikeAction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/MainSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/MainSuite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/suite01/Offset2DTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/suite01/Offset2DTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/suite01/TroopTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/suite01/TroopTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/suite02/TroopTileTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/suite02/TroopTileTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/suite04/ActionsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/suite04/ActionsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thedrake/Army.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thedrake/Army.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thedrake/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thedrake/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thedrake/BoardMove.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thedrake/BoardMove.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thedrake/BoardPos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thedrake/BoardPos.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/thedrake/BoardTile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thedrake/BoardTile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thedrake/BoardTroops.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thedrake/BoardTroops.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thedrake/CaptureOnly.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thedrake/CaptureOnly.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thedrake/GameResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thedrake/GameResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thedrake/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thedrake/GameState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thedrake/Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thedrake/Move.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thedrake/Offset2D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thedrake/Offset2D.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thedrake/PlaceFromStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thedrake/PlaceFromStack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thedrake/PlayingSide.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thedrake/PlayingSide.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thedrake/PositionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thedrake/PositionFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thedrake/ShiftAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thedrake/ShiftAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thedrake/SlideAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thedrake/SlideAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thedrake/StandardDrakeSetup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thedrake/StandardDrakeSetup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thedrake/StepAndCapture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thedrake/StepAndCapture.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thedrake/StepOnly.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thedrake/StepOnly.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thedrake/StrikeAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thedrake/StrikeAction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/thedrake/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thedrake/Tile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thedrake/TilePos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thedrake/TilePos.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/thedrake/Troop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thedrake/Troop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thedrake/TroopAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thedrake/TroopAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thedrake/TroopFace.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thedrake/TroopFace.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/thedrake/TroopTile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thedrake/TroopTile.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -59,18 +76,67 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.BoardTroopsTest">
-    <configuration name="BoardTroopsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.MainSuite">
+    <configuration name="GameStateTest.introGame" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TheDrakeGame" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="suite03.*" />
+          <option name="PATTERN" value="suite04.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="suite03" />
-      <option name="MAIN_CLASS_NAME" value="suite03.BoardTroopsTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="suite04" />
+      <option name="MAIN_CLASS_NAME" value="suite04.GameStateTest" />
+      <option name="METHOD_NAME" value="introGame" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GameStateTest.middleGameBlue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TheDrakeGame" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="suite04.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="suite04" />
+      <option name="MAIN_CLASS_NAME" value="suite04.GameStateTest" />
+      <option name="METHOD_NAME" value="middleGameBlue" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GameStateTest.middleGameBlueWithoutMountain" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TheDrakeGame" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="suite04.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="suite04" />
+      <option name="MAIN_CLASS_NAME" value="suite04.GameStateTest" />
+      <option name="METHOD_NAME" value="middleGameBlueWithoutMountain" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GameStateTest.middleGameOrange" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TheDrakeGame" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="suite04.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="suite04" />
+      <option name="MAIN_CLASS_NAME" value="suite04.GameStateTest" />
+      <option name="METHOD_NAME" value="middleGameOrange" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -92,8 +158,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.BoardTroopsTest" />
         <item itemvalue="JUnit.MainSuite" />
+        <item itemvalue="JUnit.GameStateTest.middleGameBlue" />
+        <item itemvalue="JUnit.GameStateTest.middleGameOrange" />
+        <item itemvalue="JUnit.GameStateTest.introGame" />
+        <item itemvalue="JUnit.GameStateTest.middleGameBlueWithoutMountain" />
       </list>
     </recent_temporary>
   </component>
@@ -111,7 +180,12 @@
       <workItem from="1697134132477" duration="523000" />
       <workItem from="1697136096458" duration="4975000" />
       <workItem from="1697652827421" duration="5419000" />
-      <workItem from="1698351234626" duration="5051000" />
+      <workItem from="1698351234626" duration="5646000" />
+      <workItem from="1698415996270" duration="399000" />
+      <workItem from="1698421558193" duration="2215000" />
+      <workItem from="1698526413615" duration="13904000" />
+      <workItem from="1698612044998" duration="7294000" />
+      <workItem from="1700430226296" duration="16000" />
     </task>
     <task id="LOCAL-00001" summary="Add Tile">
       <created>1697134470396</created>
@@ -136,6 +210,26 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add Tile" />
     <option name="LAST_COMMIT_MESSAGE" value="Add Tile" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/suite04/GameStateTest.java</url>
+          <line>131</line>
+          <properties class="suite04.GameStateTest" method="middleGameBlue">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/thedrake/TilePos.java</url>
+          <line>9</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

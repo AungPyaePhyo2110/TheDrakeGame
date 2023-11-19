@@ -2,6 +2,8 @@ package thedrake;
 
 import java.util.Optional;
 
+import static java.lang.Math.abs;
+
 public class GameState {
     private final Board board;
     private final PlayingSide sideOnTurn;
@@ -65,51 +67,77 @@ public class GameState {
     // at that position and if not, returns a tile from the board object
     public Tile tileAt(TilePos pos) {
         // Místo pro váš kód
-        Tile foundTile = board.at(pos);
-        if(foundTile.hasTroop())
-        {
-            return (TroopTile) foundTile;
-        }
+        if(blueArmy.boardTroops().troopPositions().contains(pos))
+            return blueArmy.boardTroops().at(pos).get();
+        else if(orangeArmy.boardTroops().troopPositions().contains(pos))
+            return orangeArmy.boardTroops().at(pos).get();
+
+        if(board.at(pos).canStepOn())
+            return BoardTile.EMPTY;
         else
-        {
-            return foundTile;
-        }
+            return BoardTile.MOUNTAIN;
+
     }
 
     private boolean canStepFrom(TilePos origin) {
         // Místo pro váš kód
         if(result != GameResult.IN_PLAY)
             return  false;
-        Tile foundTile = tileAt(origin);
-        if(!foundTile.hasTroop())
+        if(origin == BoardPos.OFF_BOARD)
             return false;
-        else{
+        if(!blueArmy.boardTroops().isLeaderPlaced() || blueArmy.boardTroops().isPlacingGuards() ||
+                !orangeArmy.boardTroops().isLeaderPlaced() || orangeArmy.boardTroops().isPlacingGuards())
+        {
+            return false;
+        }
+
+        Tile foundTile = tileAt(origin);
+        if(foundTile.hasTroop())
+        {
             TroopTile troopTile = (TroopTile) foundTile;
             return troopTile.side() == sideOnTurn;
         }
+        return false;
 
     }
 
     private boolean canStepTo(TilePos target) {
         // Místo pro váš kód
-        if(result!= GameResult.IN_PLAY)
+        if(result != GameResult.IN_PLAY)
+            return  false;
+        if(target == BoardPos.OFF_BOARD)
             return false;
+        if(!blueArmy.boardTroops().isLeaderPlaced() || blueArmy.boardTroops().isPlacingGuards() ||
+                !orangeArmy.boardTroops().isLeaderPlaced() || orangeArmy.boardTroops().isPlacingGuards())
+        {
+            return false;
+        }
+
         Tile foundTile = tileAt(target);
+        if(foundTile.hasTroop())
+        {
+            return false;
+        }
         return foundTile.canStepOn();
     }
 
     private boolean canCaptureOn(TilePos target) {
         // Místo pro váš kód
-        if(result!= GameResult.IN_PLAY)
-            return false;
-        Tile foundTile = tileAt(target);
-        if(!foundTile.hasTroop())
+        if(result != GameResult.IN_PLAY)
             return  false;
-        else
+        if(target == BoardPos.OFF_BOARD)
+            return false;
+        if(!blueArmy.boardTroops().isLeaderPlaced() || blueArmy.boardTroops().isPlacingGuards() ||
+                !orangeArmy.boardTroops().isLeaderPlaced() || orangeArmy.boardTroops().isPlacingGuards())
         {
-            TroopTile troopTile = (TroopTile) foundTile;
-            return troopTile.side() != sideOnTurn;
+            return false;
         }
+
+        Tile targetTile = tileAt(target);
+        if(!targetTile.hasTroop())
+            return false;
+        TroopTile troopTile = (TroopTile) targetTile;
+        return ((TroopTile) targetTile).side() != sideOnTurn;
     }
 
     public boolean canStep(TilePos origin, TilePos target) {
@@ -123,18 +151,86 @@ public class GameState {
     public boolean canPlaceFromStack(TilePos target) {
         // Místo pro váš kód
         if(result != GameResult.IN_PLAY)
+            return  false;
+        if(target == BoardPos.OFF_BOARD)
             return false;
+        if(!tileAt(target).canStepOn())
+        {
+            return false;
+        }
         if(sideOnTurn == PlayingSide.ORANGE)
         {
             if(orangeArmy.stack().isEmpty())
                 return false;
-            return canStepTo(target);
+            if(!orangeArmy.boardTroops().isLeaderPlaced())
+            {
+               if(target.row() != board.dimension())
+                   return false;
+               else
+               {
+                   return tileAt(target).canStepOn();
+               }
+            }
+            if(orangeArmy.boardTroops().isPlacingGuards())
+            {
+                int column = abs(orangeArmy.boardTroops().leaderPosition().column()- target.column());
+                int row = abs(orangeArmy.boardTroops().leaderPosition().row()-target.row());
+                if( !(row == 0 && column == 1) && !(row == 1 && column == 0))
+                    return  false;
+                else
+                {
+                    if(!board.at(target).canStepOn())
+                        return false;
+                }
+            }
+            boolean foundPlace = false;
+            for(BoardPos position : orangeArmy.boardTroops().troopPositions())
+            {
+                int column = abs(position.column()-target.column());
+                int row = abs(position.row()-target.row());
+                if( (row == 0 && column == 1) || (row == 1 && column == 0))
+                    foundPlace = true;
+            }
+            return foundPlace;
         }
         else
         {
             if(blueArmy.stack().isEmpty())
                 return false;
-            return canStepTo(target);
+            if(!blueArmy.boardTroops().isLeaderPlaced())
+            {
+                if(target.row() != 1)
+                    return false;
+                else
+                {
+                    return board.at(target).canStepOn();
+                }
+            }
+            if(blueArmy.boardTroops().isPlacingGuards())
+            {
+
+                int column = abs(blueArmy.boardTroops().leaderPosition().column()- target.column());
+                int row = abs(blueArmy.boardTroops().leaderPosition().row()-target.row());
+                if( !(row == 0 && column == 1) && !(row == 1 && column == 0))
+                    return  false;
+                else
+                {
+                    if(!board.at(target).canStepOn())
+                        return false;
+                }
+
+            }
+
+            boolean foundplace = false;
+            for(BoardPos position : blueArmy.boardTroops().troopPositions())
+            {
+                int column = abs(position.column()-target.column());
+                int row = abs(position.row()-target.row());
+                if( (row == 0 && column == 1) || (row == 1 && column == 0))
+                    foundplace =  true;
+            }
+
+            return foundplace;
         }
     }
 
