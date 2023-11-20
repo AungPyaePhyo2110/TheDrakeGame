@@ -1,10 +1,11 @@
 package thedrake;
 
+import java.io.PrintWriter;
 import java.util.Optional;
 
 import static java.lang.Math.abs;
 
-public class GameState {
+public class GameState implements JSONSerializable {
     private final Board board;
     private final PlayingSide sideOnTurn;
     private final Army blueArmy;
@@ -258,5 +259,18 @@ public class GameState {
         }
 
         return new GameState(board, armyNotOnTurn, armyOnTurn, PlayingSide.ORANGE, result);
+    }
+
+    @Override
+    public void toJSON(PrintWriter writer) {
+        writer.print("{\"result\":");
+        result.toJSON(writer);
+        writer.print(",\"board\":");
+        board.toJSON(writer);
+        writer.print(",\"blueArmy\":");
+        blueArmy.toJSON(writer);
+        writer.print(",\"orangeArmy\":");
+        orangeArmy.toJSON(writer);
+        writer.print("}");
     }
 }

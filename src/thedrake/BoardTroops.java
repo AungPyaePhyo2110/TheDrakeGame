@@ -1,12 +1,9 @@
 package thedrake;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Optional;
-import java.util.Set;
+import java.io.PrintWriter;
+import java.util.*;
 
-public class BoardTroops {
+public class BoardTroops implements JSONSerializable {
     private final PlayingSide playingSide;
     private final Map<BoardPos, TroopTile> troopMap;
     private final TilePos leaderPosition;
@@ -168,5 +165,30 @@ public class BoardTroops {
         if(target.equals(leaderPosition))
             return new BoardTroops(playingSide,newTroopMap,TilePos.OFF_BOARD,guards);
         return new BoardTroops(playingSide,newTroopMap,leaderPosition,guards);
+    }
+
+    @Override
+    public void toJSON(PrintWriter writer) {
+        writer.print("{\"side\":");
+        this.playingSide.toJSON(writer);
+        writer.print(",\"leaderPosition\":");
+        this.leaderPosition.toJSON(writer);
+        writer.print(",\"guards\":"+guards());
+        writer.print(",\"troopMap\":{");
+        int i = 0;
+        Set<BoardPos> keys = troopMap.keySet();
+        List<BoardPos> listKeys = new ArrayList<>(keys);
+        Collections.sort(listKeys);
+        for(BoardPos pos : listKeys)
+        {
+            pos.toJSON(writer);
+            writer.print(":");
+            troopMap.get(pos).toJSON(writer);
+            i++;
+            if(i != troopMap.size())
+                writer.print(",");
+        }
+        writer.print("}");
+        writer.print("}");
     }
 }

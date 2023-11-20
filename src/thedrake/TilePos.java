@@ -1,5 +1,6 @@
 package thedrake;
 
+import java.io.PrintWriter;
 import java.util.List;
 
 public interface TilePos {
@@ -80,4 +81,14 @@ public interface TilePos {
     public TilePos stepByPlayingSide(Offset2D dir, PlayingSide side);
 
     public boolean equalsTo(int i, int j);
+
+    default void toJSON(PrintWriter writer) {
+        if(this == TilePos.OFF_BOARD)
+            writer.print("\"off-board\"");
+        else
+        {
+            writer.print("\""+this.column()+this.row() + "\"");
+        }
+
+    }
 }

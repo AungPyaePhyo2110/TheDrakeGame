@@ -1,5 +1,6 @@
 package thedrake;
 
+import java.io.PrintWriter;
 import java.util.List;
 
 public interface Tile {
@@ -11,4 +12,7 @@ public interface Tile {
     public boolean hasTroop();
 
     public List<Move> movesFrom(BoardPos pos, GameState state);
+
+
+
 }

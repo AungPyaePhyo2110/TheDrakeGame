@@ -265,7 +265,7 @@ public class GameStateTest {
                 new Army(PlayingSide.ORANGE, Collections.emptyList())
         );
 
-        //No placing from an empty stack
+        // No placing from an empty stack
         assertFalse(state.canPlaceFromStack(pf.pos("a1")));
         assertFalse(state.canPlaceFromStack(pf.pos("a1")));
     }

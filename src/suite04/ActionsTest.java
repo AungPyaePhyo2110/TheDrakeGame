@@ -20,12 +20,13 @@ public class ActionsTest {
     public void test() {
         Board board = new Board(4);
         PositionFactory pf = board.positionFactory();
+        board = board.withTiles(new Board.TileAt(pf.pos("c1"),BoardTile.MOUNTAIN));
         StandardDrakeSetup setup = new StandardDrakeSetup();
 
         BoardTroops blueTroops = new BoardTroops(PlayingSide.BLUE);
         blueTroops = blueTroops
                 .placeTroop(setup.DRAKE, pf.pos("b1"))
-                .placeTroop(setup.CLUBMAN, pf.pos("c1"))
+                .placeTroop(setup.CLUBMAN, pf.pos("a1"))
                 .placeTroop(setup.SPEARMAN, pf.pos("b2"));
         Army blueArmy = new Army(blueTroops, Collections.emptyList(), Collections.emptyList());
 
@@ -38,22 +39,30 @@ public class ActionsTest {
 
         GameState state = new GameState(board, blueArmy, orangeArmy);
 
+        // Slide: Drake at b1 cannot move anywhere, as own units are on a1 and b2 and mountain is on c1
+        assertEquals(
+                makeSet(),
+                new HashSet<Move>(
+                        state.tileAt(pf.pos("b1")).movesFrom(pf.pos("b1"), state)
+                )
+        );
 
+        board = board.withTiles(new Board.TileAt(pf.pos("c1"),BoardTile.EMPTY));
+        state = new GameState(board, blueArmy, orangeArmy);
 
-
-
-        //Slide: drake at b1 can move only in an empty direction (own clubman is on c1)
+        // Now the same slide without the mountain - Drake can slide in the c1 direction:
         assertEquals(
                 makeSet(
-                        new StepOnly(pf.pos("b1"), pf.pos("a1"))
+                        new StepOnly(pf.pos("b1"), pf.pos("c1")),
+                        new StepOnly(pf.pos("b1"), pf.pos("d1"))
                 ),
                 new HashSet<Move>(
                         state.tileAt(pf.pos("b1")).movesFrom(pf.pos("b1"), state)
                 )
         );
 
-
-
+        // Blue spearman can capture orange clubman on b3, then move there, or can capture the orange drake.
+        // There is nothing to capture on a4.
         assertEquals(
                 makeSet(
                         new StepAndCapture(pf.pos("b2"), pf.pos("b3")),
@@ -64,9 +73,10 @@ public class ActionsTest {
                 )
         );
 
+        // We ignore the possible list of moves and force the drake to move over the mountain for testing purposes
         state = state.stepOnly(pf.pos("b1"), pf.pos("d1"));
 
-        //Slide: drake at c4 can move to free spaces in both directions
+        // Slide: drake at c4 can move to free spaces in both directions
         assertEquals(
                 makeSet(
                         new StepOnly(pf.pos("c4"), pf.pos("a4")),
@@ -78,7 +88,7 @@ public class ActionsTest {
                 )
         );
 
-        //Slide: monk at c3 can capture enemy unit, but cannot pass through it
+        // Slide: monk at c3 can capture enemy unit, but cannot pass through it
         assertEquals(
                 makeSet(
                         new StepAndCapture(pf.pos("c3"), pf.pos("b2")),

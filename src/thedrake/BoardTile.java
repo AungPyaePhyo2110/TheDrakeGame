@@ -1,10 +1,16 @@
 package thedrake;
 
+import java.io.PrintWriter;
 import java.util.Collections;
 import java.util.List;
 
-public interface BoardTile extends Tile {
+public interface BoardTile extends Tile , JSONSerializable {
     BoardTile EMPTY = new BoardTile() {
+
+        @Override
+        public void toJSON(PrintWriter writer) {
+            writer.print("\"empty\"");
+        }
 
         @Override
         public boolean canStepOn() {
@@ -25,9 +31,16 @@ public interface BoardTile extends Tile {
         public String toString() {
             return "empty";
         }
+
+
     };
 
     BoardTile MOUNTAIN = new BoardTile() {
+        @Override
+        public void toJSON(PrintWriter writer) {
+            writer.print("\"mountain\"");
+        }
+
         @Override
         public boolean canStepOn() {
             return false;
@@ -47,5 +60,8 @@ public interface BoardTile extends Tile {
         public String toString() {
             return "mountain";
         }
+
+
+
     };
 }

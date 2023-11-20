@@ -11,8 +11,8 @@ public class Offset2DTest {
 
     @Test
     public void classStructure() {
-        // Třída drží souřadnice jako dva public immutable
-        // atributy x a y typu int.
+        // The class contains coordinates as two public immutables
+        // Both x and y are ints
         try {
             assertTrue(Modifier.isFinal(
                     Offset2D.class.getField("x").getModifiers()));
@@ -28,19 +28,19 @@ public class Offset2DTest {
 
     @Test
     public void behaviour() {
-        // Konstruktor, který bere dva parametry typu int.
+        // Constructor that accepts two int parameters
         Offset2D offset2D = new Offset2D(10, -5);
 
         assertSame(10, offset2D.x);
         assertSame(-5, offset2D.y);
 
-        // Metoda equals pro porovnávání s jinými souřadnicemi
+        // Method for comparison with other coordinates
         assertTrue(offset2D.equalsTo(10, -5));
         assertFalse(offset2D.equalsTo(9, -5));
         assertFalse(offset2D.equalsTo(10, -4));
         assertFalse(offset2D.equalsTo(0, 1));
 
-        // Metoda yFlipped vytváří nový Offset2D se obrácenou y souřadnicí.
+        // Creates new Offset2D object with negated y coordinate
         assertTrue(offset2D.yFlipped().equalsTo(10, 5));
         assertTrue(offset2D.yFlipped().yFlipped().equalsTo(10, -5));
         assertNotSame(offset2D.yFlipped(), offset2D);
